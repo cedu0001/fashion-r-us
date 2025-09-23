@@ -14,7 +14,14 @@
 @font-face {
 	font-family: Arsenal-Regular;
 	src: url(../fonts/Arsenal-Regular.ttf);
-} 
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 
 main, nav{
   margin: calc((50vh / 25) * 1.563);
@@ -51,7 +58,7 @@ nav{
     justify-content: space-between;
 }
 
-nav a{
+nav li{
    margin-left: 10px;
 }
 
@@ -59,7 +66,7 @@ nav a:hover{
     text-decoration: underline;
 }
 
-.category_list_container{
+.category_list_container, .product_item{
     margin: 18px;
     margin-bottom: 50px;
  
@@ -86,13 +93,24 @@ nav a:hover{
     transition: 50ms;
 }
 
+.flex{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.product_item img{
+width: 300px;
+}
+
+
 footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: rgb(186, 185, 185);
     padding: 15px;
-  
 }
 
 footer a{
