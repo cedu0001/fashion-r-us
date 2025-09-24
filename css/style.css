@@ -105,6 +105,24 @@ width: 300px;
 }
 
 
+.grid-2-4{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1em;
+}
+
+.grid-3{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+.grid-3 div:last-child{
+    background-color: aquamarine;
+
+}
+
+
 footer{
     display: flex;
     flex-direction: row;
