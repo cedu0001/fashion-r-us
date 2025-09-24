@@ -16,6 +16,10 @@
 	src: url(../fonts/Arsenal-Regular.ttf);
 }
 
+body{
+    background-color: rgb(245, 251, 255);
+}
+
 img{
     display: block;
     max-width: 100%;
@@ -41,11 +45,20 @@ h1 span{
  display: inline-block;
  transform: scaleX(-1) translateX(-0.2rem);
  letter-spacing: -0.2rem;
+ color: rgb(209, 21, 21);
 }
 
-h2,a{
+h3,h2,a,p,li, dt, dd{
     font-family: Arsenal-Regular;
-    color: black;
+    color: rgb(22, 22, 23);
+}
+
+h2{
+    font-size: 36px;
+}
+
+p, a, li, dt, dd{
+    font-size: 18px;
 }
 
 header{
@@ -58,11 +71,15 @@ nav{
     justify-content: space-between;
 }
 
+nav div{
+    font-size: 18px;
+}
+
 nav li{
    margin-left: 10px;
 }
 
-nav a:hover{
+nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
     text-decoration: underline;
 }
 
@@ -81,16 +98,19 @@ nav a:hover{
 }
 
 .category_a{
-    background-color: rgb(147, 147, 147);
+    background-color: rgb(166, 172, 179);
     padding: 30px;
     margin: 18px;
+    border: solid 1.5px rgb(99, 107, 116);
+    border-radius: 15px;
  
 }
 
 .category_a:hover{
-    background-color: grey;
+    background-color: rgb(101, 107, 117);
     transform: scale(1.05);
     transition: 50ms;
+    color: aliceblue;
 }
 
 .flex{
@@ -99,11 +119,58 @@ nav a:hover{
     flex-wrap: wrap;
 }
 
-
 .product_item img{
-width: 300px;
+    width: 300px;
+    border: solid 1.5px rgba(50, 53, 57, 0.263);
 }
 
+.product_item a, .breadcrumbs a{
+    text-decoration: 2px underline rgba(52, 52, 52, 0.219);
+}
+
+.sold-out::before{
+  content: "SOLD OUT";
+  position: absolute;
+  background: rgb(169, 6, 6);
+  color: white;
+  padding: 1rem;
+  font-family: Arsenal-Regular;
+}
+
+.price{
+    font-style: italic;
+    font-family: Arsenal-Bold;
+    color: red;
+}
+
+.sale p:last-child{
+ color: red;
+}
+.sale{
+ display: flex;
+ justify-content: space-between;
+}
+
+
+.category{
+    color: rgba(51, 53, 66, 0.568);
+}
+
+.breadcrumbs{
+    margin: 18px;
+    margin-left: 38px;
+    display: flex;
+}
+
+.breadcrumbs li::after{
+    content: " > ";
+    font-size: 18px;
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
 
 .grid-2-4{
     display: grid;
@@ -111,23 +178,50 @@ width: 300px;
     gap: 1em;
 }
 
-.grid-3{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+.grid-2-4 img{
+    border: solid 1.5px rgba(50, 53, 57, 0.263);
+    margin-left: 50px;
+}
+
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
 
 }
 
-.grid-3 div:last-child{
-    background-color: aquamarine;
+.flex-col div{
+    margin-bottom: 20px;
 
 }
 
+dl dt{
+    font-style: italic;
+}
+dl dd{
+    margin-left: 10px;
+}
+
+.flex-col div:last-child{
+    background-color: rgba(114, 122, 139, 0.384);
+    width: 300px;
+    padding: 40px;
+
+}
+
+.basket{
+    margin-top: 15px;
+    padding: 20px;
+    font-family: Arsenal-Regular;
+    font-size: 18px;
+    
+}
 
 footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: rgb(186, 185, 185);
+    background-color: rgba(166, 172, 189, 0.356);
     padding: 15px;
 }
 
@@ -138,23 +232,3 @@ footer a{
 footer a:hover{
     text-decoration: underline;
 }
-
-/* ---- */
-/* html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 1000px;
-  box-sizing: border-box;
-}
-html {
-  display: table;
-  margin: auto;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-} */
- 
