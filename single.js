@@ -1,36 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="/css/style.css">
-     <script src="single.js" defer></script>
-    <title>FashionRus | Productpage </title>
-</head>
-<body>
-    
-<header>
-    
-<nav>
-    <a href="index.html" id="logo"><h1>Fashion<span>R</span>us</h1></a>
-    <div>
-    <a href="" class="">Categories</a>
-    <a href="" class="">Brands</a>
-    <a href="" class="">Seasons</a>
-    </div>
-</nav>
+const productContainer = document.querySelector(".product_view");
+    console.log(productContainer);
 
-</header>
-<main>
-<section class="product_view">
-   <!--  <ol class="breadcrumbs">
+    //Hjælper os med at hente ting fra adressen
+const parametre = new URLSearchParams(window.location.search);
+const id = parametre.get("id");
+console.log(id);
+
+
+    //Henter ting fra API
+fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
+    .then((response) => response.json())
+    .then((product) => {
+        //console.log(product.articletype);
+    
+
+productContainer.innerHTML = `
+
+<ol class="breadcrumbs">
     <li><a href="index.html">Categories</a></li>
     <li><a href="produktliste.html">Products</a></li>
     <li>PUMA Backpack</li>
 </ol>
 
     <div class="grid-2-4">
-        <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="PUMA Backpack">
+        <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="PUMA Backpack">
         <div class="flex-col">
             <div>
                 <h3>Product Information</h3>
@@ -43,31 +36,19 @@
                     <dt>Color</dt>
                     <dd>Black</dd>
                     <dt>Inventory number</dt>
-                    <dd>1526</dd>
+                    <dd>${product.id}</dd>
                 </dl>
             </div>
             <div>
                 <h3>PUMA Backpack</h3>
-                <p class="category">Backpack | PUMA</p>
-                <p>799,-</p>
+                <p class="category">${product.articletype} | PUMA</p>
+                <p>${product.price},-</p>
                 <button class="basket">Add to basket</button>
             </div>
         </div>
         
         
-    </div> -->
-
-</section>
-
-
-</main>
-<footer>
-    <div>
-    <a href="" class="">Contact us</a>
-    <a href="" class="">Help</a>
-    <a href="" class="">About us</a>
     </div>
-</footer>
-
-</body>
-</html>
+    
+        `;
+    });
