@@ -18,30 +18,36 @@ productContainer.innerHTML = `
 
 <ol class="breadcrumbs">
     <li><a href="index.html">Categories</a></li>
+    <li style="margin-left: 5px;">></li>
     <li><a href="produktliste.html">Products</a></li>
-    <li>PUMA Backpack</li>
+    <li style="margin-left: 5px;">></li>
+    <li>${product.brandname} ${product.variantname}</li>
 </ol>
 
     <div class="grid-2-4">
         <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="PUMA Backpack">
         <div class="flex-col">
             <div>
+                <h3 style="font-size: 30px;">${product.brandname} ${product.variantname}</h3>
+                <p>${product.brandbio}</p>
+            </div>
+            <div>
                 <h3>Product Information</h3>
-                <p>This PUMA backpack is a practical and stylish solution for everyday use, <br>helping you to easily organize and transport your belongings. <br> The backpack is equipped with a spacious main compartment that closes with <br>a two-way zipper, so you can quickly access your belongings wherever you are going.</p>
+                <p>${product.description}</p>
             </div>
             <div>
                 <dl>
-                    <dt>Model name</dt>
-                    <dd>PUMA Backpack</dd>
+                    <dt>Category</dt>
+                    <dd>${product.category}</dd>
                     <dt>Color</dt>
-                    <dd>Black</dd>
+                    <dd>${product.basecolour}</dd>
                     <dt>Inventory number</dt>
                     <dd>${product.id}</dd>
                 </dl>
             </div>
             <div>
-                <h3>PUMA Backpack</h3>
-                <p class="category">${product.articletype} | PUMA</p>
+                <h3>${product.brandname} ${product.variantname}</h3>
+                <p class="category">${product.articletype} | ${product.brandname} </p>
                 <p>${product.price},-</p>
                 <button class="basket">Add to basket</button>
             </div>

@@ -162,7 +162,7 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
     display: flex;
 }
 
-.breadcrumbs li::after{
+/* .breadcrumbs li::after{
     content: " > ";
     font-size: 18px;
     width: 10px;
@@ -170,7 +170,7 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
     margin-left: 10px;
     margin-right: 10px;
 
-}
+} */
 
 .grid-2-4{
     display: grid;
