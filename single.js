@@ -10,9 +10,13 @@ console.log(id);
     //Henter ting fra API
 fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
     .then((response) => response.json())
-    .then((product) => {
-        //console.log(product.articletype);
-    
+    .then(showProduct)
+    //Har en functionsreference som modtager "product", den ved godt at den skal kaldes med "product"
+        
+        
+        function showProduct(product) {
+//console.log(product.articletype);
+// arrow function => 
 
 productContainer.innerHTML = `
 
@@ -57,4 +61,4 @@ productContainer.innerHTML = `
     </div>
     
         `;
-    });
+    };
