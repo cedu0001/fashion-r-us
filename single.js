@@ -11,7 +11,7 @@ console.log(id);
 fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
     .then((response) => response.json())
     .then(showProduct)
-    //Har en functionsreference som modtager "product", den ved godt at den skal kaldes med "product"
+    //Har en functionsreference som modtager "product", den ved godt at den skal kaldes med "product" 
         
         
         function showProduct(product) {
