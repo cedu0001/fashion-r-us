@@ -115,13 +115,18 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
 
 .flex{
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
 .product_item img{
     width: 300px;
     border: solid 1.5px rgba(50, 53, 57, 0.263);
+}
+
+.product_item {
+  flex: 1 1 200px;
+  max-width: 300px;
 }
 
 .product_item a, .breadcrumbs a{
@@ -137,18 +142,16 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
   font-family: Arsenal-Regular;
 }
 
-.price{
-    font-style: italic;
-    font-family: Arsenal-Bold;
-    color: red;
-}
-
 .sale p:last-child{
  color: red;
 }
 .sale{
  display: flex;
  justify-content: space-between;
+}
+
+.discount{
+    font-style: italic;
 }
 
 

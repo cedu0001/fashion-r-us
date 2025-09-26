@@ -10,7 +10,7 @@ console.log(id);
     //Henter ting fra API
 fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
     .then((response) => response.json())
-    .then(showProduct)
+    .then(data => showProduct(data))
     //Har en functionsreference som modtager "product", den ved godt at den skal kaldes med "product" 
         
         
@@ -29,10 +29,10 @@ productContainer.innerHTML = `
 </ol>
 
     <div class="grid-2-4">
-        <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="PUMA Backpack">
+        <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt=${product.productdisplayname}>
         <div class="flex-col">
             <div>
-                <h3 style="font-size: 30px;">${product.brandname} ${product.variantname}</h3>
+                <h3 style="font-size: 30px;">${product.productdisplayname}</h3>
                 <p>${product.brandbio}</p>
             </div>
             <div>
