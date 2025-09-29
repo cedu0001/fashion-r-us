@@ -3,8 +3,12 @@ console.log("hej");
 const productListContainer = document.querySelector(".category_list_container");
     console.log(productListContainer);
 
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+    const header = (document.querySelector("h2").textContent = category);
+
     //Henter ting fra API
-fetch(`https://kea-alt-del.dk/t7/api/products`)
+    fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
     .then((response) => response.json())
     .then(data => showProducts(data))
         
