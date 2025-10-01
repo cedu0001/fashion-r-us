@@ -1,20 +1,43 @@
-console.log("hej");
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+const header = (document.querySelector("h2").textContent = category);
 
 const productListContainer = document.querySelector(".category_list_container");
-    console.log(productListContainer);
 
-    const params = new URLSearchParams(window.location.search);
-    const category = params.get("category");
-    const header = (document.querySelector("h2").textContent = category);
+document
+.querySelectorAll("#filters button")
+.forEach((knap) => knap.addEventListener("click", showFiltered));
+
+function showFiltered(){
+  console.log(this.dataset.gender);
+  const gender = this.dataset.gender;
+  if (gender == "All") {
+    showProducts(allData);
+  } else { 
+    const fraction = allData.filter((product) => product.gender == gender );
+    showProducts(fraction);
+  }
+}
+
+let allData;
+
+
+
 
     //Henter ting fra API
     fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
     .then((response) => response.json())
-    .then(data => showProducts(data))
+    .then((data) => {
+      allData = data;
+      showProducts(allData)
+    
+    }); 
+
+
         
 function showProducts(products) {
 console.log(products);
-    
+    productListContainer.innerHTML = "";
     products.forEach(element =>{
         console.log(element);
   

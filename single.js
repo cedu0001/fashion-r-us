@@ -33,10 +33,10 @@ productContainer.innerHTML = `
         <div class="flex-col">
             <div>
                 <h3 style="font-size: 30px;">${product.productdisplayname}</h3>
-                <p>${product.brandbio}</p>
             </div>
             <div>
                 <h3>Product Information</h3>
+                
                 <p>${product.description}</p>
             </div>
             <div>
@@ -49,12 +49,22 @@ productContainer.innerHTML = `
                     <dd>${product.id}</dd>
                 </dl>
             </div>
+            <div class=" ${product.soldout ? "sold-out" : ""}"></div>
             <div>
                 <h3>${product.brandname} ${product.variantname}</h3>
                 <p class="category">${product.articletype} | ${product.brandname} </p>
-                <p>${product.price},-</p>
+                ${product.discount ? ` <p class="price">${product.price},-</p>
+                <div class="sale">
+                <p class = "discount">Now ${Math.round(product.price - product.price * product.discount / 100)},-</p>
+                <p>-${product.discount}%</p>
+                </div>
+                ` : `
+                <p class="price">${product.price},-</p>
+                `}
                 <button class="basket">Add to basket</button>
+                
             </div>
+            
         </div>
         
         

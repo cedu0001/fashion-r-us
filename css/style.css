@@ -31,8 +31,12 @@ main, nav{
   margin: calc((50vh / 25) * 1.563);
 }
 
-h1, h2{
+h1{ 
     margin: 18px;
+}
+
+h2{
+    margin-left: 35px;
 }
 
 h1{
@@ -48,7 +52,7 @@ h1 span{
  color: rgb(209, 21, 21);
 }
 
-h3,h2,a,p,li, dt, dd{
+h3,h2,a,p,li, dt, dd, button, ol, ul{
     font-family: Arsenal-Regular;
     color: rgb(22, 22, 23);
 }
@@ -89,9 +93,14 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
  
 }
 
+.category_list_container{
+    display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
 .grid-3-2{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 1em;
 }
 
@@ -109,6 +118,28 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
     transform: scale(1.05);
     transition: 50ms;
     color: aliceblue;
+}
+
+.filterbtn{
+ background-color: rgb(23, 25, 41);
+ color: aliceblue;
+ padding: 15px;
+ border: 0.9px solid rgb(23, 25, 41);
+ cursor: pointer;
+ border-radius: 30px;
+ font-size: 16px;
+ width: 100px;
+}
+
+.filterbtn:hover{
+ background-color: aliceblue;
+ border: 0.9px solid rgb(23, 25, 41);
+ color: rgb(23, 25, 41);
+ transition: 50ms;
+}
+
+#filters{
+    margin-left: 35px;
 }
 
 .flex{
@@ -163,15 +194,6 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
     display: flex;
 }
 
-/* .breadcrumbs li::after{
-    content: " > ";
-    font-size: 18px;
-    width: 10px;
-    height: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-
-} */
 
 .grid-2-4{
     display: grid;
