@@ -21,9 +21,6 @@ function showFiltered(){
 
 let allData;
 
-
-
-
     //Henter ting fra API
     fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
     .then((response) => response.json())
