@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="/css/style.css">
+     <script src="productlist.js" defer></script>
     <title>FashionRus | Products</title>
 </head>
 <body>
@@ -21,19 +22,28 @@
 
 </header>
 <main>
-
-    <section class="category_list_container">
-         <h2>Products</h2>
-        <div class="flex">
+<h2>Products</h2>
+<section id="filters">
+    <button class="filterbtn" data-gender="All">All</button>
+    <button class="filterbtn" data-gender="Unisex">Unisex</button>
+    <button class="filterbtn" data-gender="Women">Womens</button>
+    <button class="filterbtn" data-gender="Men">Men</button>
+</section>
+<section id="sorting">
+    <button data-direction="lowhigh" class="filterbtn">Pris: lav til høj</button>
+    <button data-direction="highlow" class="filterbtn">Pris: høj til lav</button>
+</section>
+    <section class="category_list_container flex">
+        <!-- <div class="flex">
             <div class="product_item">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="Sahara Team India Fanwear Round Neck Jersey">
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="PUMA Backpack">
                 <h3>PUMA Backpack</h3>
                 <p class="category">Backpack | PUMA</p>
                 <p>799,-</p>
                 <a href="produkt.html">See Item</a>
             </div>
              <div class="product_item sold-out">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp" alt="Sahara Team India Fanwear Round Neck Jersey">
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp" alt="PUMA Backpack">
                 <h3>PUMA Backpack</h3>
                 <p class="category">Backpack | PUMA</p>
                 <p class="price">449,-</p>
@@ -44,7 +54,7 @@
                 <a href="produkt.html">See Item</a>
             </div>
              <div class="product_item sold-out">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp" alt="Sahara Team India Fanwear Round Neck Jersey">
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp" alt="SAHARA Team Round Neck Jersey">
                 <h3>SAHARA Team Round Neck Jersey</h3>
                 <p class="category">Sports | SAHARA</p>
                 <p class="price">199,-</p>
@@ -55,13 +65,13 @@
                 <a href="produkt.html">See Item</a>
             </div>
              <div class="product_item">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="Sahara Team India Fanwear Round Neck Jersey">
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="SAHARA Team Polo">
                 <h3>SAHARA Team Polo</h3>
                 <p class="category">Sports | SAHARA</p>
                 <p>499,-</p>
                 <a href="produkt.html">See Item</a>
             </div>
-        </div>
+        </div> -->
 
     </section>
 

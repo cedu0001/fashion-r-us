@@ -31,8 +31,12 @@ main, nav{
   margin: calc((50vh / 25) * 1.563);
 }
 
-h1, h2{
+h1{ 
     margin: 18px;
+}
+
+h2{
+    margin-left: 35px;
 }
 
 h1{
@@ -48,7 +52,7 @@ h1 span{
  color: rgb(209, 21, 21);
 }
 
-h3,h2,a,p,li, dt, dd{
+h3,h2,a,p,li, dt, dd, button, ol, ul{
     font-family: Arsenal-Regular;
     color: rgb(22, 22, 23);
 }
@@ -89,11 +93,14 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
  
 }
 
+.category_list_container{
+    display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
 .grid-3-2{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-   /*  grid-template-columns: repeat(3, 1fr); */
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 1em;
 }
 
@@ -113,15 +120,44 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
     color: aliceblue;
 }
 
+.filterbtn{
+ background-color: rgb(23, 25, 41);
+ color: aliceblue;
+ padding: 15px;
+ border: 0.9px solid rgb(23, 25, 41);
+ cursor: pointer;
+ border-radius: 30px;
+ font-size: 16px;
+ width: 150px;
+ margin-bottom: 10px;
+ margin-top: 10px;
+}
+
+.filterbtn:hover{
+ background-color: aliceblue;
+ border: 0.9px solid rgb(23, 25, 41);
+ color: rgb(23, 25, 41);
+ transition: 50ms;
+}
+
+#filters, #sorting{
+    margin-left: 35px;
+}
+
 .flex{
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
 .product_item img{
     width: 300px;
     border: solid 1.5px rgba(50, 53, 57, 0.263);
+}
+
+.product_item {
+  flex: 1 1 200px;
+  max-width: 300px;
 }
 
 .product_item a, .breadcrumbs a{
@@ -137,18 +173,16 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
   font-family: Arsenal-Regular;
 }
 
-.price{
-    font-style: italic;
-    font-family: Arsenal-Bold;
-    color: red;
-}
-
 .sale p:last-child{
  color: red;
 }
 .sale{
  display: flex;
  justify-content: space-between;
+}
+
+.discount{
+    font-style: italic;
 }
 
 
@@ -162,15 +196,6 @@ nav a:hover, .product_item a:hover, .breadcrumbs a:hover{
     display: flex;
 }
 
-.breadcrumbs li::after{
-    content: " > ";
-    font-size: 18px;
-    width: 10px;
-    height: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-
-}
 
 .grid-2-4{
     display: grid;
